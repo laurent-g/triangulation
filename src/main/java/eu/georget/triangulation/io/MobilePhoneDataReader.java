@@ -20,7 +20,8 @@ import eu.georget.triangulation.core.Location;
 import eu.georget.triangulation.core.MobilePhone;
 
 /**
- * MobilePhoneDataReader
+ * MobilePhoneDataReader allow to read cell site and mobile phone information
+ * from an input stream
  * 
  * @author laurent
  * 
