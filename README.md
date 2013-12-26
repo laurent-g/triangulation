@@ -19,3 +19,19 @@ Maven :
 + mvn clean install
 + mvn javadoc:javadoc
 	
+	
+
+Import dans Eclipse 3.8 :
+
+File / Import
+
+Select an import source : Git / Projects from Git
+Select a location of Git Repositories : URI
+
+Source Git Repository
+	URI : https://github.com/laurent-g/triangulation.git
+	Branch selection : master
+	Local destination : some directory
+	Select a wizard.. : Import existing projects
+
+	
