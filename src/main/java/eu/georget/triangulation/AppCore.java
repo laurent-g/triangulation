@@ -10,9 +10,9 @@ import eu.georget.triangulation.core.MobilePhone;
  * First Main App
  * 
  */
-public class App {
+public class AppCore {
 
-	static final Logger logger = Logger.getLogger(App.class);
+	static final Logger logger = Logger.getLogger(AppCore.class);
 
 	public static void main(String[] args) {
 

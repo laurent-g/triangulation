@@ -1,12 +1,18 @@
 package eu.georget.triangulation.core;
 
-import junit.framework.TestCase;
-
 import org.apache.log4j.Logger;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
-public class TestCore extends TestCase {
+public class TestCore {
 
 	static final Logger logger = Logger.getLogger(TestCore.class);
+
+	public TestCore() {
+		super();
+	}
 
 	CellSite cellSiteA;
 	CellSite cellSiteB;
@@ -16,8 +22,8 @@ public class TestCore extends TestCase {
 	MobilePhone mobilePhone1;
 	MobilePhone mobilePhone2;
 
-	@Override
-	protected void setUp() throws Exception {
+	@Before
+	public void before() {
 
 		/*
 		 * Cell sites
@@ -41,31 +47,31 @@ public class TestCore extends TestCase {
 		mobilePhone2.registerCellSite(cellSiteD, 3);
 	}
 
-	@Override
-	protected void tearDown() throws Exception {
+	@After
+	public void after() {
 		/*
 		 * Nothing to do
 		 */
 	}
 
+	@Test
 	public void testMobilePhoneLocation() {
 
 		Location location1 = mobilePhone1.getLocation();
 
 		logger.debug("X: " + location1.getX());
-		assertEquals(location1.getX(), 40);
+		Assert.assertEquals(location1.getX(), 40);
 
 		logger.debug("Y: " + location1.getY());
-		assertEquals(location1.getY(), 80);
-		
+		Assert.assertEquals(location1.getY(), 80);
+
 		Location location2 = mobilePhone2.getLocation();
 
 		logger.info("X: " + location2.getX());
-		assertEquals(location2.getX(), 42);
+		Assert.assertEquals(location2.getX(), 42);
 
 		logger.info("Y: " + location2.getY());
-		assertEquals(location2.getY(), 84);
+		Assert.assertEquals(location2.getY(), 84);
 	}
-
 
 }
