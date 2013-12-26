@@ -18,8 +18,6 @@ Tests :
 Maven :
 + mvn clean install
 + mvn javadoc:javadoc
-	
-	
 
 Import in Eclipse 3.8 :
 

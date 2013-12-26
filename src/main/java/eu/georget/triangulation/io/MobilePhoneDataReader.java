@@ -28,6 +28,16 @@ import eu.georget.triangulation.core.MobilePhone;
  */
 public class MobilePhoneDataReader implements Closeable {
 
+	/**
+	 * Max number of cell site constraint
+	 */
+	static int MAX_NUMBER_OF_CELL_SITE = 19;
+	
+	/**
+	 * Max number of mobile phone constraint
+	 */
+	static int MAX_NUMBER_OF_MOBILE_PHONE = 99;
+	
 	static final Logger logger = Logger.getLogger(MobilePhoneDataReader.class);
 
 	/**
@@ -91,6 +101,10 @@ public class MobilePhoneDataReader implements Closeable {
 		Validate.matchesPattern(strNumberOfCellSites, FIRST_LINE_REGEX);
 		int numberOfCellSites = Integer.valueOf(strNumberOfCellSites);
 
+		if (numberOfCellSites > MAX_NUMBER_OF_CELL_SITE) {
+			throw new IllegalArgumentException("There is too much cell sites");
+		}
+
 		// Cell site lines
 		logger.debug("Read cell site lines");
 		Pattern cellSitePattern = Pattern.compile(CELL_SITE_REGEX);
@@ -116,6 +130,10 @@ public class MobilePhoneDataReader implements Closeable {
 						Integer.valueOf(strCellSiteY)));
 				tmpCellSites.put(cellSiteId, cellSite);
 				cellSites.add(cellSite);
+				
+				if (cellSites.size()>MAX_NUMBER_OF_MOBILE_PHONE) {
+					throw new IllegalArgumentException("There is too much mobile phones");
+				}
 			}
 		}
 
@@ -125,7 +143,6 @@ public class MobilePhoneDataReader implements Closeable {
 		String mobilePhoneLine;
 		MobilePhone mobilePhone;
 		String strSignalStrength;
-
 		while ((mobilePhoneLine = reader.readLine()) != null) {
 			if ("".equals(mobilePhoneLine)) {
 				break;
