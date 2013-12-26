@@ -21,7 +21,7 @@ Maven :
 	
 	
 
-Import dans Eclipse 3.8 :
+Import in Eclipse 3.8 :
 
 + File / Import
 + Select an import source : Git / Projects from Git
