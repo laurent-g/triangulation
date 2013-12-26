@@ -1,4 +1,4 @@
-package eu.georget.triangulation.core;
+package eu.georget.triangulation.io;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,6 +9,8 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
+import eu.georget.triangulation.core.CellSite;
+import eu.georget.triangulation.core.MobilePhone;
 import eu.georget.triangulation.io.MobilePhoneDataReader;
 import eu.georget.triangulation.io.MobilePhoneDataWriter;
 

@@ -6,7 +6,6 @@ import java.io.OutputStream;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.junit.Assert;
 
 import eu.georget.triangulation.core.MobilePhone;
 import eu.georget.triangulation.io.MobilePhoneDataReader;
@@ -21,6 +20,9 @@ import eu.georget.triangulation.io.MobilePhoneDataWriter;
  */
 public class AppConsole {
 
+	/**
+	 * Logger
+	 */
 	static final Logger logger = Logger.getLogger(AppConsole.class);
 
 	public static void main(String[] args) {
@@ -31,6 +33,10 @@ public class AppConsole {
 
 			InputStream in = System.in;
 			reader = new MobilePhoneDataReader(in);
+			
+			/*
+			 * Read data from console
+			 */
 			reader.readAll();
 
 		} catch (IOException e) {
@@ -51,6 +57,9 @@ public class AppConsole {
 			}
 		}
 
+		/*
+		 * Get result
+		 */
 		List<MobilePhone> mobilePhones = reader.getMobilesPhones();
 
 		MobilePhoneDataWriter writer = null;
@@ -58,11 +67,14 @@ public class AppConsole {
 
 			OutputStream out = System.out;
 			writer = new MobilePhoneDataWriter(out);
+			
+			/*
+			 * Write locations to console
+			 */
 			writer.writeMobilePhones(mobilePhones);
 
 		} catch (IOException e) {
 			logger.error("Error while writing output stream", e);
-			Assert.fail("Error while writing output stream");
 
 		} finally {
 
