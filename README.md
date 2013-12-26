@@ -8,10 +8,10 @@ Maven dependencies :
 + hamcrest-core 1.3
 
 Application console
-	+ eu.georget.triangulation.AppConsole
++ eu.georget.triangulation.AppConsole
 
 Tests :
- 	+ Test suite : eu.georget.triangulation.TestSuite
-	+ Core part : eu.georget.triangulation.core.TestCore
-	+ IO part : eu.georget.triangulation.core.TestIO
++ Test suite : eu.georget.triangulation.TestSuite
++ Core part : eu.georget.triangulation.core.TestCore
++ IO part : eu.georget.triangulation.core.TestIO
 	
