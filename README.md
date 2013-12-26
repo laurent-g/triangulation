@@ -14,4 +14,8 @@ Tests :
 + Test suite : eu.georget.triangulation.TestSuite
 + Core part : eu.georget.triangulation.core.TestCore
 + IO part : eu.georget.triangulation.core.TestIO
+
+Maven :
++ mvn clean install
++ mvn javadoc:javadoc
 	
